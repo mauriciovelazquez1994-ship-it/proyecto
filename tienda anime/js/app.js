@@ -1,3 +1,4 @@
+//Productos
 const products = [
     {id:1,name:'Figura - Gengar',price:6990,category:'Figuras',img:'img/productos/figuras/f_gengar.jpg'},
     {id:2,name:'Figura - Godzilla',price:6990,category:'Figuras',img:'img/productos/figuras/f_godzilla.jpg'},
