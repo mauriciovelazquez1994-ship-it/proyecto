@@ -12,6 +12,10 @@
     font-family:Inter, system-ui, 'Segoe UI', Roboto, Arial;
     padding-top: 80px; /* para dejar espacio a la navbar fija */
   }
+  .logo-nombre{
+    width: 290px;
+    height: 90px;
+  }
   
   .navbar {
     background: rgba(15, 23, 36, 0.9) !important;
