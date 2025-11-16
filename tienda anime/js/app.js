@@ -19,6 +19,11 @@ const products = [
     {id:18,name:'Mangas - Kimetsu no Yaiba',price:2990,category:'Mangas',img:'img/productos/mangas/m_kimetsu.jpg'},
     {id:19,name:'Mangas - Black Clover',price:2990,category:'Mangas',img:'img/productos/mangas/m_blackclover.jpg'},
     {id:20,name:'Mangas - Jujutsu Kaisen',price:2990,category:'Mangas',img:'img/productos/mangas/m_jujutsu.jpg'},
+    {id:21,name:'Juegos - Catan',price:5990,category:'Juegos',img:'img/productos/juegos de mesa/j_catan.jpg'},
+    {id:22,name:'Juegos - La Mansion de la Locura',price:8990,category:'Juegos',img:'img/productos/juegos de mesa/j_lamansiondelalocura.jpg'},
+    {id:23,name:'Juegos - Nemesis',price:7990,category:'Juegos',img:'img/productos/juegos de mesa/j_nemesis.jpg'},
+    {id:24,name:'Juegos - Zombicide',price:6990,category:'Juegos',img:'img/productos/juegos de mesa/j_zombicide.jpg'},
+    {id:25,name:'Juegos - Rebellion Star Wars',price:10990,category:'Juegos',img:'img/productos/juegos de mesa/j_rebellionstarwars.jpg'}
   ];
   
   const state = {cart:{}};
