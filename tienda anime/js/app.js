@@ -1,12 +1,24 @@
 const products = [
-    {id:1,name:'Figura - Héroe Épico',price:6990,category:'Figuras',img:'https://picsum.photos/seed/a1/400/300'},
-    {id:2,name:'Poster - Oro & Negro',price:1290,category:'Posters',img:'https://picsum.photos/seed/a2/400/300'},
-    {id:3,name:'Set de Pines',price:590,category:'Merch',img:'https://picsum.photos/seed/a3/400/300'},
-    {id:4,name:'Figura - Rivales',price:7490,category:'Figuras',img:'https://picsum.photos/seed/a4/400/300'},
-    {id:5,name:'Sudadera Minimal',price:8990,category:'Ropa',img:'https://picsum.photos/seed/a5/400/300'},
-    {id:6,name:'Figura - Edición Limitada',price:15990,category:'Figuras',img:'https://picsum.photos/seed/a6/400/300'},
-    {id:7,name:'Llavero metálico',price:450,category:'Merch',img:'https://picsum.photos/seed/a7/400/300'},
-    {id:8,name:'Poster - Arte clásico',price:1490,category:'Posters',img:'https://picsum.photos/seed/a8/400/300'}
+    {id:1,name:'Figura - Gengar',price:6990,category:'Figuras',img:'img/productos/figuras/f_gengar.jpg'},
+    {id:2,name:'Figura - Godzilla',price:6990,category:'Figuras',img:'img/productos/figuras/f_godzilla.jpg'},
+    {id:3,name:'Figura - Goku',price:6990,category:'Figuras',img:'img/productos/figuras/f_goku.jpg'},
+    {id:4,name:'Figura - Luffy',price:6990,category:'Figuras',img:'img/productos/figuras/f_luffy.jpg'},
+    {id:5,name:'Figura - Solo Leveling',price:6990,category:'Figuras',img:'img/productos/figuras/f_Sungjinwoo.jpg'},
+    {id:6,name:'Accesorios - Aros',price:1290,category:'Accesorios',img:'img/productos/accesorios/a_aros.jpg'},
+    {id:7,name:'Accesorios - Collar',price:1590,category:'Accesorios',img:'img/productos/accesorios/a_collaresnaruto.jpg'},
+    {id:8,name:'Accesorios - Pulsera',price:1990,category:'Accesorios',img:'img/productos/accesorios/a_pulseras.jpg'},
+    {id:9,name:'Accesorios - Llaveros',price:1590,category:'Accesorios',img:'img/productos/accesorios/a_llaverosPokemon.jpg'},
+    {id:10,name:'Accesorios - Pines',price:990,category:'Accesorios',img:'img/productos/accesorios/a_pines.jpg'},
+    {id:11,name:'Comics - Avengers',price:2990,category:'Comics',img:'img/productos/comics/c_avengers.jpg'},
+    {id:12,name:'Comics - Batman',price:2990,category:'Comics',img:'img/productos/comics/c_batman.jpg'},
+    {id:13,name:'Comics - Spiderman',price:2990,category:'Comics',img:'img/productos/comics/c_spiderman.jpg'},
+    {id:14,name:'Comics - deadpool',price:2990,category:'Comics',img:'img/productos/comics/c_deadpool.jpg'},
+    {id:15,name:'Comics - young justice',price:2990,category:'Comics',img:'img/productos/comics/c_youngjustice.jpg'},
+    {id:16,name:'Mangas - Naruto',price:2990,category:'Mangas',img:'img/productos/mangas/m_naruto.jpg'},
+    {id:17,name:'Mangas - One Piece',price:2990,category:'Mangas',img:'img/productos/mangas/m_onepiece.jpg'},
+    {id:18,name:'Mangas - Kimetsu no Yaiba',price:2990,category:'Mangas',img:'img/productos/mangas/m_kimetsu.jpg'},
+    {id:19,name:'Mangas - Black Clover',price:2990,category:'Mangas',img:'img/productos/mangas/m_blackclover.jpg'},
+    {id:20,name:'Mangas - Jujutsu Kaisen',price:2990,category:'Mangas',img:'img/productos/mangas/m_jujutsu.jpg'},
   ];
   
   const state = {cart:{}};
