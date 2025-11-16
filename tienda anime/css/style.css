@@ -53,10 +53,47 @@
   .summary-box{background:var(--glass);border-radius:10px}
   .success-card{background:linear-gradient(180deg, rgba(124,92,255,0.06), rgba(79,182,255,0.02));border-radius:14px;padding:28px;text-align:center}
   .success-card .emoji{font-size:48px;margin-bottom:8px}
-  footer{margin-top:40px;color:var(--muted);font-size:14px}
+  footer {
+    margin-top: 40px;
+    color: var(--muted);
+    font-size: 14px;}
+/* FALTA CENTRAR,SE DESORDENAN OBJETOS.
+.icons {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+   
+}
+
+a {
+    margin: 10px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    width: 80px; 
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-size: 2rem;
+    color: var(--color);
+}
+
+
+a:hover {
+    background: var(--color);
+    color: #010101;
+    box-shadow: 0 0 5px var(--color), 
+                0 0 50px var(--color), 
+                0 0 75px var(--color), 
+                0 0 100px var(--color);
+}*/
+
   @media (max-width:768px){.search-input{min-width:160px}.container-main{padding:0 12px}}
   .map-container iframe {
     filter: grayscale(60%) brightness(0.9);
     border-radius: 12px;
   }
- 
