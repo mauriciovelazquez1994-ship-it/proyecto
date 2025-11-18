@@ -49,7 +49,7 @@
   .hero{padding:28px;border-radius:14px;background:linear-gradient(90deg, rgba(124,92,255,0.12), rgba(79,182,255,0.04));border:1px solid rgba(124,92,255,0.06)}
   .page{display:none}
   .page.active{display:block}
-  .checkout-card{background: teelblue;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+  .checkout-card{background: #4fb6ff;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
   .summary-box{background:var(--glass);border-radius:10px}
   .success-card{background:linear-gradient(180deg, rgba(124,92,255,0.06), rgba(79,182,255,0.02));border-radius:14px;padding:28px;text-align:center}
   .success-card .emoji{font-size:48px;margin-bottom:8px}
@@ -98,3 +98,4 @@ a:hover {
     border-radius: 12px;
 
   }
+
