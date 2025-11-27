@@ -24,7 +24,9 @@ const products = [
     {id:22,name:'Juegos - La Mansion de la Locura',price:8990,category:'Juegos',img:'img/productos/juegos de mesa/j_lamansiondelalocura.jpg'},
     {id:23,name:'Juegos - Nemesis',price:7990,category:'Juegos',img:'img/productos/juegos de mesa/j_nemesis.jpg'},
     {id:24,name:'Juegos - Zombicide',price:6990,category:'Juegos',img:'img/productos/juegos de mesa/j_zombicide.jpg'},
-    {id:25,name:'Juegos - Rebellion Star Wars',price:10990,category:'Juegos',img:'img/productos/juegos de mesa/j_rebellionstarwars.jpg'}
+    {id:25,name:'Juegos - Rebellion Star Wars',price:10990,category:'Juegos',img:'img/productos/juegos de mesa/j_rebellionstarwars.jpg'},
+    //{id:26,name:'Giftcard - Giftcard de $1000', price: -1000, category: 'Giftcard', img: 'img/productos/giftcard/g_giftcard.png'},
+   // {id:27,name:'Giftcard - Giftcard de $3000', price: -3000, category: 'Giftcard', img: 'img/productos/giftcard/g_giftcard.png'},
   ];
   
   const state = {cart:{}};
