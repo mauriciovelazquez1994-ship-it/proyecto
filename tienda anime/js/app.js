@@ -139,7 +139,7 @@ document.addEventListener('click', e => {
     }
 
     updateCartDisplay();
-    saveCart();   // 👈 aquí guardamos el carrito
+    saveCart();
     renderProducts(products);
   }
 
@@ -298,12 +298,21 @@ function saveCart(){
   localStorage.setItem('cart', JSON.stringify(state.cart));
 }
 
-// Cargar carrito desde localStorage
+// Cargar carrito desde localStorage y ajustar stock
 function loadCart(){
-  const saved = localStorage.getItem('cart');
-  if(saved){
-    state.cart = JSON.parse(saved);
-    updateCartDisplay();
-    renderProducts(products);
+  const savedCart = localStorage.getItem('cart');
+  if(savedCart){
+    state.cart = JSON.parse(savedCart);
+
+    // 🔧 Recalcular stock según lo que ya está en el carrito
+    products.forEach(p => {
+      const item = state.cart[p.id];
+      if(item){
+        p.stock -= item.qty;
+      }
+    });
   }
+
+  updateCartDisplay();
+  renderProducts(products);
 }
