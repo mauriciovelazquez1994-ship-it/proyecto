@@ -30,6 +30,9 @@ const products = [
 const state = {cart:{}};
 const el = id => document.getElementById(id);
 const money = v => '$' + Number(v).toLocaleString('es-AR');
+// Al iniciar la app, cargamos el carrito guardado
+loadCart();
+
 
 // Categorías
 const categorySet = new Set(products.map(p=>p.category));
@@ -136,8 +139,11 @@ document.addEventListener('click', e => {
     }
 
     updateCartDisplay();
+    saveCart();   // 👈 aquí guardamos el carrito
     renderProducts(products);
   }
+
+
 
   // ❌ Eliminar producto completo del carrito
   if(e.target.closest('.removeItem')){
@@ -286,4 +292,18 @@ function renderRecommendations(){
 function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   el(id).classList.add('active');
+}
+// Guardar carrito en localStorage
+function saveCart(){
+  localStorage.setItem('cart', JSON.stringify(state.cart));
+}
+
+// Cargar carrito desde localStorage
+function loadCart(){
+  const saved = localStorage.getItem('cart');
+  if(saved){
+    state.cart = JSON.parse(saved);
+    updateCartDisplay();
+    renderProducts(products);
+  }
 }
