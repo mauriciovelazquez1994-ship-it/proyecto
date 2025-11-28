@@ -87,6 +87,7 @@ renderProducts(products);
 
 // 🛒 Carrito
 function updateCartDisplay(){
+  
   const cart = state.cart;
   const count = Object.values(cart).reduce((a,b)=>a+b.qty,0);
   const total = Object.values(cart).reduce((a,b)=>a+b.qty*b.price,0);
@@ -100,44 +101,92 @@ function updateCartDisplay(){
     const div = document.createElement('div');
     div.className='d-flex justify-content-between align-items-center mb-2';
     div.innerHTML=`
-      <div>${item.name} <small class="text-muted">x${item.qty}</small></div>
-      <div>
-        <span>${money(item.qty*item.price)}</span>
-        <button class="btn btn-sm btn-link text-danger p-0 ms-2 removeItem" data-id="${id}">
-          <i class="bi bi-x-circle"></i>
-        </button>
-      </div>`;
+  <div>${item.name}</div>
+  <div class="d-flex align-items-center">
+    <button class="btn btn-sm btn-outline-light me-1 decreaseItem" data-id="${id}">-1</button>
+    <span class="mx-2">${item.qty}</span>
+    <button class="btn btn-sm btn-outline-light ms-1 increaseItem" data-id="${id}">+1</button>
+    <span class="ms-3">${money(item.qty*item.price)}</span>
+    <button class="btn btn-sm btn-link text-danger p-0 ms-2 removeItem" data-id="${id}">
+      <i class="bi bi-x-circle"></i>
+    </button>
+  </div>`;
+
     container.appendChild(div);
   }
 }
 
 // 🛍 Eventos
-document.addEventListener('click',e=>{
+document.addEventListener('click', e => {
+  // ➕ Agregar al carrito desde catálogo
   if(e.target.closest('.addToCart')){
     const id = e.target.closest('.addToCart').dataset.id;
-    const prod = products.find(p=>p.id==id);
+    const prod = products.find(p => p.id == id);
 
-    // ⭐ RESTAR STOCK
     if (prod.stock <= 0) {
       alert("No hay stock disponible.");
       return;
     }
     prod.stock--;
 
-    // Agregar al carrito
-    if(!state.cart[id]) state.cart[id]={...prod,qty:1};
-    else state.cart[id].qty++;
+    if(!state.cart[id]) {
+      state.cart[id] = { id: prod.id, name: prod.name, price: prod.price, qty: 1 };
+    } else {
+      state.cart[id].qty++;
+    }
 
     updateCartDisplay();
     renderProducts(products);
   }
 
+  // ❌ Eliminar producto completo del carrito
   if(e.target.closest('.removeItem')){
     const id = e.target.closest('.removeItem').dataset.id;
-    delete state.cart[id];
+    const prod = products.find(p => p.id == id);
+
+    if(state.cart[id]){
+      prod.stock += state.cart[id].qty;
+      delete state.cart[id];
+    }
+
     updateCartDisplay();
+    renderProducts(products);
+  }
+
+  // ➕ Aumentar cantidad en carrito
+  if(e.target.closest('.increaseItem')){
+    const id = e.target.closest('.increaseItem').dataset.id;
+    const prod = products.find(p => p.id == id);
+
+    if(prod.stock <= 0){
+      alert("No hay más stock disponible.");
+      return;
+    }
+
+    prod.stock--;
+    state.cart[id].qty++;
+
+    updateCartDisplay();
+    renderProducts(products);
+  }
+
+  // ➖ Disminuir cantidad en carrito
+  if(e.target.closest('.decreaseItem')){
+    const id = e.target.closest('.decreaseItem').dataset.id;
+    const prod = products.find(p => p.id == id);
+
+    state.cart[id].qty--;
+    prod.stock++;
+
+    if(state.cart[id].qty <= 0){
+      delete state.cart[id];
+    }
+
+    updateCartDisplay();
+    renderProducts(products);
   }
 });
+
 
 // 🔎 Filtros
 el('search').addEventListener('input',filterProducts);
