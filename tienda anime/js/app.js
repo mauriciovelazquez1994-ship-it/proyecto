@@ -1,30 +1,30 @@
 //Productos
 const products = [
-    {id:1,name:'Figura - Gengar',price:6990,category:'Figuras',img:'img/productos/figuras/f_gengar.jpg', stock:8},
-    {id:2,name:'Figura - Godzilla',price:6990,category:'Figuras',img:'img/productos/figuras/f_godzilla.jpg', stock:5},
-    {id:3,name:'Figura - Goku',price:6990,category:'Figuras',img:'img/productos/figuras/f_goku.jpg', stock:10},
-    {id:4,name:'Figura - Luffy',price:6990,category:'Figuras',img:'img/productos/figuras/f_luffy.jpg', stock:4},
-    {id:5,name:'Figura - Solo Leveling',price:6990,category:'Figuras',img:'img/productos/figuras/f_Sungjinwoo.jpg', stock:3},
-    {id:6,name:'Accesorios - Aros',price:1290,category:'Accesorios',img:'img/productos/accesorios/a_aros.jpg', stock:15},
-    {id:7,name:'Accesorios - Collar',price:1590,category:'Accesorios',img:'img/productos/accesorios/a_collaresnaruto.jpg', stock:6},
-    {id:8,name:'Accesorios - Pulsera',price:1990,category:'Accesorios',img:'img/productos/accesorios/a_pulseras.jpg', stock:20},
-    {id:9,name:'Accesorios - Llaveros',price:1590,category:'Accesorios',img:'img/productos/accesorios/a_llaverosPokemon.jpg', stock:25},
-    {id:10,name:'Accesorios - Pines',price:990,category:'Accesorios',img:'img/productos/accesorios/a_pines.jpg', stock:50},
-    {id:11,name:'Comics - Avengers',price:2990,category:'Comics',img:'img/productos/comics/c_avengers.jpg', stock:7},
-    {id:12,name:'Comics - Batman',price:2990,category:'Comics',img:'img/productos/comics/c_batman.jpg', stock:7},
-    {id:13,name:'Comics - Spiderman',price:2990,category:'Comics',img:'img/productos/comics/c_spiderman.jpg', stock:7},
-    {id:14,name:'Comics - deadpool',price:2990,category:'Comics',img:'img/productos/comics/c_deadpool.jpg', stock:7},
-    {id:15,name:'Comics - young justice',price:2990,category:'Comics',img:'img/productos/comics/c_youngjustice.jpg', stock:7},
-    {id:16,name:'Mangas - Naruto',price:2990,category:'Mangas',img:'img/productos/mangas/m_naruto.jpg', stock:12},
-    {id:17,name:'Mangas - One Piece',price:2990,category:'Mangas',img:'img/productos/mangas/m_onepiece.jpg', stock:12},
-    {id:18,name:'Mangas - Kimetsu no Yaiba',price:2990,category:'Mangas',img:'img/productos/mangas/m_kimetsu.jpg', stock:12},
-    {id:19,name:'Mangas - Black Clover',price:2990,category:'Mangas',img:'img/productos/mangas/m_blackclover.jpg', stock:12},
-    {id:20,name:'Mangas - Jujutsu Kaisen',price:2990,category:'Mangas',img:'img/productos/mangas/m_jujutsu.jpg', stock:12},
-    {id:21,name:'Juegos - Catan',price:5990,category:'Juegos',img:'img/productos/juegos de mesa/j_catan.jpg', stock:4},
-    {id:22,name:'Juegos - La Mansion de la Locura',price:8990,category:'Juegos',img:'img/productos/juegos de mesa/j_lamansiondelalocura.jpg', stock:2},
-    {id:23,name:'Juegos - Nemesis',price:7990,category:'Juegos',img:'img/productos/juegos de mesa/j_nemesis.jpg', stock:0},
-    {id:24,name:'Juegos - Zombicide',price:6990,category:'Juegos',img:'img/productos/juegos de mesa/j_zombicide.jpg', stock:8},
-    {id:25,name:'Juegos - Rebellion Star Wars',price:10990,category:'Juegos',img:'img/productos/juegos de mesa/j_rebellionstarwars.jpg', stock:1},
+    {id:1,name:'Figura - Gengar',price:6990,category:'Figuras',img:'img/productos/figuras/f_gengar.jpg', stock:8, initialStock:8},
+    {id:2,name:'Figura - Godzilla',price:6990,category:'Figuras',img:'img/productos/figuras/f_godzilla.jpg', stock:5, initialStock:5},
+    {id:3,name:'Figura - Goku',price:6990,category:'Figuras',img:'img/productos/figuras/f_goku.jpg', stock:10, initialStock:10},
+    {id:4,name:'Figura - Luffy',price:6990,category:'Figuras',img:'img/productos/figuras/f_luffy.jpg', stock:4, initialStock:4},
+    {id:5,name:'Figura - Solo Leveling',price:6990,category:'Figuras',img:'img/productos/figuras/f_Sungjinwoo.jpg', stock:3, initialStock:3},
+    {id:6,name:'Accesorios - Aros',price:1290,category:'Accesorios',img:'img/productos/accesorios/a_aros.jpg', stock:15, initialStock:15},
+    {id:7,name:'Accesorios - Collar',price:1590,category:'Accesorios',img:'img/productos/accesorios/a_collaresnaruto.jpg', stock:6, initialStock:6},
+    {id:8,name:'Accesorios - Pulsera',price:1990,category:'Accesorios',img:'img/productos/accesorios/a_pulseras.jpg', stock:20, initialStock:20},
+    {id:9,name:'Accesorios - Llaveros',price:1590,category:'Accesorios',img:'img/productos/accesorios/a_llaverosPokemon.jpg', stock:25, initialStock:25},
+    {id:10,name:'Accesorios - Pines',price:990,category:'Accesorios',img:'img/productos/accesorios/a_pines.jpg', stock:50, initialStock:50},
+    {id:11,name:'Comics - Avengers',price:2990,category:'Comics',img:'img/productos/comics/c_avengers.jpg', stock:7, initialStock:7},
+    {id:12,name:'Comics - Batman',price:2990,category:'Comics',img:'img/productos/comics/c_batman.jpg', stock:7, initialStock:7},
+    {id:13,name:'Comics - Spiderman',price:2990,category:'Comics',img:'img/productos/comics/c_spiderman.jpg', stock:7, initialStock:7},
+    {id:14,name:'Comics - deadpool',price:2990,category:'Comics',img:'img/productos/comics/c_deadpool.jpg', stock:7, initialStock:7},
+    {id:15,name:'Comics - young justice',price:2990,category:'Comics',img:'img/productos/comics/c_youngjustice.jpg', stock:7, initialStock:7},
+    {id:16,name:'Mangas - Naruto',price:2990,category:'Mangas',img:'img/productos/mangas/m_naruto.jpg', stock:12, initialStock:12},
+    {id:17,name:'Mangas - One Piece',price:2990,category:'Mangas',img:'img/productos/mangas/m_onepiece.jpg', stock:12, initialStock:12},
+    {id:18,name:'Mangas - Kimetsu no Yaiba',price:2990,category:'Mangas',img:'img/productos/mangas/m_kimetsu.jpg', stock:12, initialStock:12},
+    {id:19,name:'Mangas - Black Clover',price:2990,category:'Mangas',img:'img/productos/mangas/m_blackclover.jpg', stock:12, initialStock:12},
+    {id:20,name:'Mangas - Jujutsu Kaisen',price:2990,category:'Mangas',img:'img/productos/mangas/m_jujutsu.jpg', stock:12, initialStock:12},
+    {id:21,name:'Juegos - Catan',price:5990,category:'Juegos',img:'img/productos/juegos de mesa/j_catan.jpg', stock:4, initialStock:4},
+    {id:22,name:'Juegos - La Mansion de la Locura',price:8990,category:'Juegos',img:'img/productos/juegos de mesa/j_lamansiondelalocura.jpg', stock:2, initialStock:2},
+    {id:23,name:'Juegos - Nemesis',price:7990,category:'Juegos',img:'img/productos/juegos de mesa/j_nemesis.jpg', stock:0, initialStock:0},
+    {id:24,name:'Juegos - Zombicide',price:6990,category:'Juegos',img:'img/productos/juegos de mesa/j_zombicide.jpg', stock:8, initialStock:8},
+    {id:25,name:'Juegos - Rebellion Star Wars',price:10990,category:'Juegos',img:'img/productos/juegos de mesa/j_rebellionstarwars.jpg', stock:1, initialStock:1},
 ];
 
 const state = {cart:{}};
@@ -191,6 +191,11 @@ document.addEventListener('click', e => {
     updateCartDisplay();
     renderProducts(products);
   }
+  // 🗑 Vaciar carrito
+if(e.target.closest('#clearCart')){
+  clearCart();
+}
+
 });
 
 
@@ -293,6 +298,7 @@ function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   el(id).classList.add('active');
 }
+
 // Guardar carrito en localStorage
 function saveCart(){
   localStorage.setItem('cart', JSON.stringify(state.cart));
@@ -313,6 +319,75 @@ function loadCart(){
     });
   }
 
+  updateCartDisplay();
+  renderProducts(products);
+}
+
+// Renderizar carrito y mostrar subtotal
+function updateCartDisplay(){
+  const container = el('cartItems');
+  container.innerHTML = '';
+
+  // Render de ítems del carrito
+  for(const id in state.cart){
+    const item = state.cart[id];
+
+    const row = document.createElement('div');
+    row.className = 'd-flex justify-content-between align-items-center py-2 border-bottom';
+    row.innerHTML = `
+      <div class="d-flex flex-column">
+        <strong>${item.name}</strong>
+        <small>${money(item.price)} x ${item.qty}</small>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn btn-sm btn-outline-light decreaseItem" data-id="${item.id}">−</button>
+        <span>${item.qty}</span>
+        <button class="btn btn-sm btn-outline-light increaseItem" data-id="${item.id}">+</button>
+        <button class="btn btn-sm btn-outline-danger removeItem" data-id="${item.id}">❌</button>
+      </div>
+    `;
+    container.appendChild(row);
+  }
+
+  // Subtotal (sin envío)
+  const subtotalEl = el('cartTotal');
+  if(subtotalEl){
+    const subtotal = getCartSubtotal();
+    subtotalEl.textContent = money(subtotal);
+  }
+
+  // Contador del carrito (el badge en el ícono)
+  const cartCountEl = el('cartCount');
+  if(cartCountEl){
+    const count = Object.values(state.cart).reduce((acc, it) => acc + it.qty, 0);
+    cartCountEl.textContent = count;
+  }
+}
+
+// Calcular subtotal del carrito
+function getCartSubtotal(){
+  let total = 0;
+  for (const id in state.cart){
+    const item = state.cart[id];
+    total += item.price * item.qty;
+  }
+  return total;
+}
+
+// 🗑 Vaciar carrito
+function clearCart(){
+  // Vaciar carrito en memoria
+  state.cart = {};
+
+  // Restaurar stock inicial
+  products.forEach(p => {
+    p.stock = p.initialStock; // 
+  });
+
+  // Borrar carrito en localStorage
+  localStorage.removeItem('cart');
+
+  // Actualizar interfaz
   updateCartDisplay();
   renderProducts(products);
 }
