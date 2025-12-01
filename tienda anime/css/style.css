@@ -41,7 +41,7 @@
   .brand .subtitle{font-size:12px;color:var(--muted)}
   .search-input{min-width:320px}
   .product-card{background:var(--glass);border:1px solid rgba(255,255,255,0.03);border-radius:12px;padding:14px;transition:.2s}
-  .product-card:hover{transform:scale(1.02)}
+  .product-card:hover{transform:scale(1.02); cursor:pointer;box-shadow:0 8px 16px rgba(0,0,0,0.2)}
   .price{font-weight:700;color:var(--accent)}
   .badge-cat{background:rgba(255,255,255,0.05);color:var(--muted);font-size:12px;padding:.25rem .5rem;border-radius:999px}
   .cart-btn{position:relative}
