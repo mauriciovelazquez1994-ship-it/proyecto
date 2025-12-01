@@ -30,7 +30,6 @@ const products = [
 const state = { cart: {} };
 const el = id => document.getElementById(id);
 const money = v => '$' + Number(v).toLocaleString('es-AR');
-// Al iniciar la app, cargamos el carrito guardado
 loadCart();
 
 
