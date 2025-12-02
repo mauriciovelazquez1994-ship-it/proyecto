@@ -284,9 +284,9 @@ function renderCheckoutSummary() {
     container.innerHTML += `<div class="d-flex justify-content-between mb-1">
       <div>${i.name} x${i.qty}</div>
       <div>${money(i.qty * i.price)}</div>
-    </div>`;
-  }
-  container.innerHTML += `<hr><div class="d-flex justify-content-between">
+      </div>`;
+    }
+    container.innerHTML += `<hr><div class="d-flex justify-content-between">
     <strong>Total</strong><strong>${money(total)}</strong></div>`;
 }
 
@@ -389,8 +389,8 @@ function getShippingByDepartment(zip) {
   const zonas = {
     'Capital': [5500, 5501, 5502],
     'Godoy Cruz': [5503],
-    'Maipú': [5515, 5517],
-    'Luján': [5509, 5511],
+    'Maipú': [5515, 5517, 5513],
+    'Luján': [5509, 5511, 5505],
     'Guaymallén': [5519, 5521],
     'Las Heras': [5539, 5541],
     'San Martín': [5570, 5571],
