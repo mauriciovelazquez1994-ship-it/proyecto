@@ -224,11 +224,11 @@ document.addEventListener('click', e => {
 // ===================== FILTROS =====================
 el('search').addEventListener('input', filterProducts);
 el('categoryFilter').addEventListener('change', filterProducts);
-el('clearFilters').addEventListener('click', () => {
-  el('search').value = '';
-  el('categoryFilter').value = '';
-  renderProducts(products);
-});
+//el('clearFilters').addEventListener('click', () => {
+//  el('search').value = '';
+ // el('categoryFilter').value = '';
+//  renderProducts(products);
+//});
 
 function filterProducts() {
   const q = el('search').value.toLowerCase();
@@ -481,3 +481,4 @@ el('zipInput').addEventListener('input', () => {
     updateTotalWithShipping();
   }
 });
+
