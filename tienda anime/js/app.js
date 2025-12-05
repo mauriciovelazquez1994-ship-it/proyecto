@@ -387,10 +387,10 @@ function getCartSubtotal() {
 // 🚚 Lógica local por departamento
 function getShippingByDepartment(zip) {
   const zonas = {
-    'Capital': [5500, 5501, 5502],
-    'Godoy Cruz': [5503],
-    'Maipú': [5515, 5517, 5513],
-    'Luján': [5509, 5511, 5505],
+    'Capital': [5500, 5502],
+    'Godoy Cruz': [5503, 5501],
+    'Maipú': [5515, 5517, 5513, 5511],
+    'Luján': [5509, 5505],
     'Guaymallén': [5519, 5521],
     'Las Heras': [5539, 5541],
     'San Martín': [5570, 5571],
