@@ -63,7 +63,33 @@
   /*.hero{padding:28px;border-radius:14px;background:linear-gradient(90deg, rgba(124,92,255,0.12), rgba(79,182,255,0.04));border:1px solid rgba(124,92,255,0.06)}*/
   .page{display:none}
   .page.active{display:block}
-  .checkout-card{background: #4fb6ff;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+  #checkoutPage .form-label,
+  #contactPage .form-label {
+    color: #FF6B00;
+  }
+  .checkout-card{
+    background: var(--card);
+    border: 3px solid var(--accent);
+    border-radius:12px;
+    padding:14px;
+    color: var(--muted);
+  }
+  #checkoutPage .btn-primary, #contactPage .btn-primary {
+    background: var(--accent) !important;
+    border-color: var(--accent) !important;
+    color: #041027 !important;
+  }
+  #checkoutPage .btn-primary:hover, #contactPage .btn-primary:hover {
+    filter: brightness(0.95);
+  }
+  #checkoutPage .btn-outline-light, #contactPage .btn-outline-light {
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+    background: transparent !important;
+  }
+  #checkoutPage .btn-outline-light:hover, #contactPage .btn-outline-light:hover {
+    background: rgba(255,107,0,0.06) !important;
+  }
   .summary-box{background:var(--glass);border-radius:10px}
   .success-card{background:linear-gradient(180deg, rgba(124,92,255,0.06), rgba(79,182,255,0.02));border-radius:14px;padding:28px;text-align:center}
   .success-card .emoji{font-size:48px;margin-bottom:8px}
@@ -112,5 +138,4 @@ a:hover {
     border-radius: 12px;
 
   }
-
-
+  
