@@ -116,35 +116,7 @@
           <div class="col-md-6">
             <h6>Resumen del pedido</h6>
             <div id="checkoutSummary" class="p-3 summary-box"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pantalla de éxito -->
-    <section id="successPage" class="page">
-      <div class="success-card">
-        <div class="emoji">✅</div>
-        <h3>Compra exitosa</h3>
-        <p id="orderNumber" class="text-muted"></p>
-        <button id="continueShopping" class="btn btn-outline-light mt-3">Seguir comprando</button>
-        <h5 class="mt-4">Recomendaciones para ti</h5>
-        <div class="row recommendations g-3 mt-2" id="recommendations"></div>
-      </div>
-    </section>
-
-    <!-- Carrito -->
-    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasCart">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title">Tu carrito</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
-      </div>
-      <div class="offcanvas-body d-flex flex-column">
-        <div id="cartItems" class="mb-3"></div>
-        <div class="mt-auto">
-          <div class="d-flex justify-content-between mb-2"><strong>Subtotal (sin envío)</strong><strong
-              id="cartTotal">$0.00</strong></div>
-          <!-- Opciones de envío -->
+            <!-- Opciones de envío -->
           <div class="p-3 rounded bg-dark border border-secondary mb-3">
             <h6 class="mb-3">Opciones de envío</h6>
 
@@ -176,6 +148,35 @@
             </div>
           </div>
 
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pantalla de éxito -->
+    <section id="successPage" class="page">
+      <div class="success-card">
+        <div class="emoji">✅</div>
+        <h3>Compra exitosa</h3>
+        <p id="orderNumber" class="text-muted"></p>
+        <button id="continueShopping" class="btn btn-outline-light mt-3">Seguir comprando</button>
+        <h5 class="mt-4">Recomendaciones para ti</h5>
+        <div class="row recommendations g-3 mt-2" id="recommendations"></div>
+      </div>
+    </section>
+
+    <!-- Carrito -->
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasCart">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Tu carrito</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column">
+        <div id="cartItems" class="mb-3"></div>
+        <div class="mt-auto">
+          <div class="d-flex justify-content-between mb-2"><strong>Subtotal (sin envío)</strong><strong
+              id="cartTotal">$0.00</strong></div>
+          
           <div class="d-flex gap-2">
             <button class="btn btn-light w-100" id="goToCheckout">Finalizar compra</button>
             <button class="btn btn-outline-light w-100" id="clearCart">Vaciar carrito</button>
@@ -239,6 +240,7 @@
 
 
 </html>
+
 
 
 
