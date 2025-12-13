@@ -1,246 +1,411 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NMN S.A. - Portafolio</title>
-  <style>
-    /* Reset básico */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NMN S.A. - Portafolio Profesional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Arial', sans-serif;
-      line-height: 1.6;
-      color: #333;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
 
-    /* Navbar */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #0a3d62;
-      padding: 1rem 2rem;
-    }
+        header {
+            background: linear-gradient(135deg, #ff6b35 0%, #ffa500 50%, #ffd700 100%);
+            padding: 2rem 0;
+            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.5s ease-out;
+        }
 
-    .logo {
-      color: #fff;
-      font-size: 1.5rem;
-    }
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
 
-    .nav-links {
-      list-style: none;
-      display: flex;
-    }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
 
-    .nav-links li { margin-left: 1.5rem; }
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 3px;
+        }
 
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
 
-    .nav-links a:hover { color: #f1c40f; }
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
 
-    /* Hero */
-    .hero {
-      background: linear-gradient(to right, #0a3d62, #3c6382);
-      color: #fff;
-      text-align: center;
-      padding: 5rem 2rem;
-    }
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
 
-    .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 4rem 2rem;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
 
-    .hero button {
-      background: #f1c40f;
-      border: none;
-      padding: 0.7rem 1.5rem;
-      cursor: pointer;
-      font-size: 1rem;
-      margin-top: 1rem;
-      transition: background 0.3s;
-    }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    .hero button:hover { background: #e67e22; }
+        .hero h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, #ff6b35, #ffa500, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
 
-    /* Sections */
-    .section { padding: 3rem 2rem; text-align: center; }
+        .hero p {
+            font-size: 1.3rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
 
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
+        .cta-button {
+            background: linear-gradient(135deg, #ff6b35, #ffa500);
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+        }
 
-    .project-card {
-      background: #f8f9fa;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.5);
+        }
 
-    /* Contact */
-    form {
-      display: flex;
-      flex-direction: column;
-      max-width: 400px;
-      margin: auto;
-    }
+        .section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 2rem;
+        }
 
-    form input, form textarea {
-      margin-bottom: 1rem;
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #ff6b35;
+            position: relative;
+        }
 
-    form button {
-      background: #0a3d62;
-      color: #fff;
-      border: none;
-      padding: 0.8rem;
-      cursor: pointer;
-    }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b35, #ffd700);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
 
-    form button:hover { background: #3c6382; }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
 
-    /* Footer */
-    footer {
-      background: #0a3d62;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-    }
-    .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
 
-.project-card {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
-  text-align: center;
-}
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.3);
+            border-color: #ffd700;
+        }
 
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #ff6b35, #ffa500, #ffd700);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
 
-.project-img {
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            color: #ff6b35;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .project-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #e0e0e0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .tag.orange { background: #ffe5dc; color: #ff6b35; }
+        .tag.yellow { background: #fff9e6; color: #ffa500; }
+        .tag.cyan { background: #e0f7ff; color: #00bcd4; }
+        .tag.red { background: #ffe5e5; color: #e74c3c; }
+
+        .contact-section {
+            background: linear-gradient(135deg, #ff6b35 0%, #ffa500 50%, #ffd700 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .contact-section h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-section p {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .contact-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { gap: 1rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+        }
+        .project-image img {
   width: 100%;
-  height: 160px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  transition: transform 0.3s ease;
 }
 
-.btn-project {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
-  background: #0a3d62;
-  color: #fff;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s;
+.project-card:hover .project-image img {
+  transform: scale(1.05);
 }
 
-.btn-project:hover {
-  background: #3c6382;
-}
-
-  </style>
+    </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <nav class="navbar">
-      <h1 class="logo">NMN S.A.</h1>
-      <ul class="nav-links">
-        <li><a href="#about">Sobre Nosotros</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <nav>
+            <div class="logo">NMN S.A.</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h2>Bienvenido a nuestro portafolio</h2>
-    <p>Innovación, tecnología y soluciones a medida.</p>
-    <button onclick="scrollToSection('projects')">Ver Proyectos</button>
-  </section>
+    <section class="hero" id="inicio">
+        <h1>Transformamos Ideas en Realidad</h1>
+        <p>Somos NMN S.A., un equipo apasionado de profesionales dedicados a crear soluciones innovadoras y de alta calidad para nuestros clientes.</p>
+        <button class="cta-button" onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})">
+            Contáctanos Ahora
+        </button>
+    </section>
 
-  <!-- About Section -->
-  <section id="about" class="section">
-    <h2>Sobre NMN S.A.</h2>
-    <p>Somos una empresa dedicada a crear soluciones digitales innovadoras para nuestros clientes.</p>
-  </section>
+    <section class="section" id="proyectos">
+        <h2 class="section-title">Nuestros Proyectos</h2>
+        <div class="projects-grid" id="projectsContainer">
+            <!-- Los proyectos se cargarán aquí -->
+        </div>
+    </section>
 
-  <!-- Projects Section -->
-<section id="projects" class="section">
-  <h2>Nuestros Proyectos</h2>
-  <div class="project-grid">
-    <div class="project-card">
-      <img src="img/proyecto1.jpg" alt="Proyecto 1" class="project-img">
-      <h3>Proyecto 1</h3>
-      <p>Descripción breve del proyecto.</p>
-      <a href="#" class="btn-project">Ver más</a>
+    <section class="contact-section" id="contacto">
+        <h2>¿Listo para Trabajar Juntos?</h2>
+        <p>Estamos aquí para hacer realidad tu próximo gran proyecto</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <h3>📧 Email</h3>
+                <p>contacto@nmn.com</p>
+            </div>
+            <div class="contact-item">
+                <h3>📱 Teléfono</h3>
+                <p>+54 123 456 7890</p>
+            </div>
+            <div class="contact-item">
+                <h3>📍 Ubicación</h3>
+                <p>Mendoza, Argentina</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 NMN S.A. - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        const projects = [
+            {
+                title: "Infinity Geek",
+                description: "E-commerce completo de productos anime con carrito de compras, checkout integrado, sistema de envíos y formulario de contacto. Diseño moderno con carrusel de imágenes y experiencia de usuario optimizada.",
+                img: 'img/trabajosaparte/infinity.png',
+                tags: ["E-commerce", "Checkout", "Responsive"],
+                link: "https://infinitygeeks.netlify.app/"
+            },
+            {
+                title: "Limbo Hamburguesas",
+                description: "Sitio web para hamburguesería con menú interactivo, sistema de pedidos en línea y diseño atractivo enfocado en la experiencia gastronómica.",
+                img: 'img/trabajosaparte/limbo.png',
+                tags: ["Restaurant", "Menu", "Orders"],
+                link: "https://limbohamburguesas.netlify.app"
+            },
+            {
+                title: "Fugata's Pizzas",
+                description: "Plataforma web de pizzería con catálogo de productos especializados, carrito de compras funcional e información de contacto. Interfaz intuitiva y apetitosa para pedidos online.",
+                img: 'img/trabajosaparte/fugata.png',
+                tags: ["Food", "E-commerce", "Web"],
+                link: "https://fugataspizzas.netlify.app/"
+            }
+        ];
+
+        const tagColors = ["orange", "yellow", "cyan", "red", "orange", "yellow"];
+
+        function loadProjects() {
+            const container = document.getElementById('projectsContainer');
+            projects.forEach((project, index) => {
+                const card = document.createElement('a');
+                card.className = 'project-card';
+                card.href = project.link;
+                card.target = '_blank';
+                card.rel = 'noopener noreferrer';
+                card.style.animationDelay = `${index * 0.1}s`;
+                
+                const tagsHTML = project.tags.map((tag, i) => 
+                    `<span class="tag ${tagColors[i % tagColors.length]}">${tag}</span>`
+                ).join('');
+                
+               card.innerHTML = `
+    <div class="project-image">
+        <img src="${project.image}" alt="${project.title}">
     </div>
-    <div class="project-card">
-      <img src="img/proyecto2.jpg" alt="Proyecto 2" class="project-img">
-      <h3>Proyecto 2</h3>
-      <p>Descripción breve del proyecto.</p>
-      <a href="#" class="btn-project">Ver más</a>
+    <div class="project-content">
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        <div class="project-tags">
+            ${tagsHTML}
+        </div>
     </div>
-    <div class="project-card">
-      <img src="img/proyecto3.jpg" alt="Proyecto 3" class="project-img">
-      <h3>Proyecto 3</h3>
-      <p>Descripción breve del proyecto.</p>
-      <a href="#" class="btn-project">Ver más</a>
-    </div>
-  </div>
-</section>
+`;
 
+                
+                container.appendChild(card);
+            });
+        }
 
-  <!-- Contact Section -->
-  <section id="contact" class="section">
-    <h2>Contacto</h2>
-    <form id="contactForm">
-      <input type="text" placeholder="Tu nombre" required>
-      <input type="email" placeholder="Tu correo" required>
-      <textarea placeholder="Tu mensaje" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+        window.addEventListener('load', loadProjects);
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 NMN S.A. | Todos los derechos reservados</p>
-  </footer>
-
-  <script>
-    // Scroll suave a secciones
-    function scrollToSection(id) {
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // Validación simple del formulario
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Gracias por tu mensaje. Te contactaremos pronto.');
-      this.reset();
-    });
-  </script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
