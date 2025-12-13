@@ -138,4 +138,9 @@ a:hover {
     border-radius: 12px;
 
   }
-  
+  /* === Estilo especial para el número de pedido === */
+.order-highlight {
+  color: #00ffcc;
+  font-weight: bold;
+  font-size: 1.2rem;
+}

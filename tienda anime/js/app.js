@@ -250,33 +250,30 @@ el('navHome').onclick = (e) => { e.preventDefault(); showPage('catalogPage'); };
 const offcanvas = new bootstrap.Offcanvas('#offcanvasCart');
 el('openCart').onclick = () => offcanvas.show();
 el('goToCheckout').onclick = () => { offcanvas.hide(); showPage('checkoutPage'); renderCheckoutSummary(); };
-el('openCheckout').onclick = () => showPage('checkoutPage');
+//el('openCheckout').onclick = () => showPage('checkoutPage');
 el('backToShop').onclick = () => showPage('catalogPage');
 el('clearCart').onclick = () => { state.cart = {}; updateCartDisplay(); };
-el('openContact').onclick = () => showPage('contactPage');
+//el('openContact').onclick = () => showPage('contactPage');
 el('backToShopFromContact').onclick = () => showPage('catalogPage');
 
 
-// ===================== FORMULARIO CONTACTO =====================
+// ===================== CONTACTO =====================
+console.log("JS inicializado ✅");
 el('contactForm').onsubmit = e => {
   e.preventDefault();
-  const name = el('contactName').value.trim();
-  const email = el('contactEmail').value.trim();
-  const message = el('contactMessage').value.trim();
-  if (!name || !email || !message) return alert('Por favor, completa todos los campos.');
-
-  alert(`Gracias, ${name}! Tu mensaje fue enviado correctamente.`);
-  e.target.reset();
-  showPage('catalogPage');
+  alert('Tu mensaje fue enviado correctamente, espere a la brevedad una respuesta');
+  showPage('catalogPage'); // vuelve al catálogo después de enviar
 };
-
 
 // ===================== CHECKOUT =====================
 function renderCheckoutSummary() {
   const cart = state.cart;
   const container = el('checkoutSummary');
   container.innerHTML = '';
-  if (Object.keys(cart).length === 0) { container.innerHTML = '<p>No hay productos.</p>'; return; }
+  if (Object.keys(cart).length === 0) {
+    container.innerHTML = '<p>No hay productos.</p>';
+    return;
+  }
   let total = 0;
   for (const id in cart) {
     const i = cart[id];
@@ -284,25 +281,46 @@ function renderCheckoutSummary() {
     container.innerHTML += `<div class="d-flex justify-content-between mb-1">
       <div>${i.name} x${i.qty}</div>
       <div>${money(i.qty * i.price)}</div>
-      </div>`;
-    }
-    container.innerHTML += `<hr><div class="d-flex justify-content-between">
+    </div>`;
+  }
+  container.innerHTML += `<hr><div class="d-flex justify-content-between">
     <strong>Total</strong><strong>${money(total)}</strong></div>`;
 }
 
+// Evento de envío del checkout
 el('checkoutForm').onsubmit = e => {
   e.preventDefault();
-  if (Object.keys(state.cart).length === 0) { alert('Tu carrito está vacío'); return; }
+  console.log("✅ Evento submit disparado");
+
+  if (Object.keys(state.cart).length === 0) {
+    alert('Tu carrito está vacío');
+    return;
+  }
+
   const orderNum = 'AN-' + Math.floor(Math.random() * 1000000);
-  el('orderNumber').textContent = 'Número de pedido: ' + orderNum;
+  const orderEl = el('orderNumber');
+  if (orderEl) {
+    orderEl.innerHTML = `<span class="order-highlight">
+  Tu compra fue exitosa, número de pedido: ${orderNum}
+</span>`;
+
+  }
+
   showPage('successPage');
+  console.log("✅ Página de éxito activada");
+
   state.cart = {};
   updateCartDisplay();
+  renderCheckoutSummary();
   renderRecommendations();
-}
+};
 
+// Botones de navegación
+el('backToShop').onclick = () => showPage('catalogPage');
 el('continueShopping').onclick = () => showPage('catalogPage');
 
+
+// ===================== RECOMENDACIONES =====================
 function renderRecommendations() {
   const rec = el('recommendations');
   rec.innerHTML = '';
@@ -319,6 +337,7 @@ function renderRecommendations() {
   });
 }
 
+// ===================== CAMBIO DE PÁGINA =====================
 function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   el(id).classList.add('active');
